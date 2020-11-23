@@ -28,7 +28,7 @@ let displayResult = (d) => {
     let selectedYear = document.getElementById('form-year').value
     let selectedDayEle = document.getElementById('result')
 
-    let result = dayjs$.year(parseInt(selectedYear)).month(parseInt(selectedMonth)).date(d).format()
+    let result = dayjs$.year(parseInt(selectedYear)).month(parseInt(selectedMonth)).date(d).startOf('day').format()
     selectedDayEle.innerHTML = result
 }
 
@@ -42,7 +42,7 @@ let refresh = () => {
     let days = dayjs$.year(parseInt(selectedYear)).month(parseInt(selectedMonth)).daysInMonth()
     getDays(days).forEach(d => {
         calendarEle.innerHTML += '<button onclick="displayResult('+ d +')">' + d + '</button>'
-        if (d % 10 == 0 ) calendarEle.innerHTML += '</br>'
+        if (d % 5 == 0 ) calendarEle.innerHTML += '</br>'
     })
     selectedDayEle.innerHTML = dayjs$.year(parseInt(selectedYear)).month(parseInt(selectedMonth)).startOf('day').format()
 }
