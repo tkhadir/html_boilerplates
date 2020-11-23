@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#calendar {
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  width: 10%;
+}
+</style>
+<script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+<script src="./scripts/calendar.js"></script>
+</head>
+<body>
+<p>take an appointement :</p>
+</br>
+<label>select year</label>
+<input type="text" id="form-year" value="2020" onchange="refresh()"></input>
+</br>
+<label>select month</label>
+<input type="text" id="form-month" value="01" onchange="refresh()"></input>
+</br>
+<div id="calendar">
+</div>
+</br>
+<label>selected day</label>
+<label id="result"></label>
+<script>
+init()
+</script>
+</body>
+</html>
